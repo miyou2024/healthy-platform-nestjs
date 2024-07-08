@@ -119,7 +119,8 @@
       "<rootDir>/libs/"
     ],
     "moduleNameMapper": {
-      "^@nestjs-package/bootstrap(|/.*)$": "<rootDir>/libs/bootstrap/src/$1"
+      "^@nestjs-package/bootstrap(|/.*)$": "<rootDir>/libs/bootstrap/src/$1",
+      "^@nestjs-package/passport(|/.*)$": "<rootDir>/libs/passport/src/$1"
     }
   }
 }
