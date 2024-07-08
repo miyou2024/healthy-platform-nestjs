@@ -2,8 +2,8 @@ import { ISwaggerOptions } from './bootstrap.interface';
 import { INestApplication, Injectable, Logger, ValidationPipe } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import cookieParser from 'cookie-parser';
-import dayjs from 'dayjs';
+import * as cookieParser from 'cookie-parser';
+import * as dayjs from 'dayjs';
 
 @Injectable()
 export class BootstrapService {
