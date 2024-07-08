@@ -1,8 +1,59 @@
 {
   "$schema": "https://json.schemastore.org/nest-cli",
   "collection": "@nestjs/schematics",
-  "sourceRoot": "src",
+  "sourceRoot": "apps/healthy-platform-nestjs/src",
   "compilerOptions": {
-    "deleteOutDir": true
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/healthy-platform-nestjs/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/healthy-platform-nestjs",
+  "projects": {
+    "healthy-platform-nestjs": {
+      "type": "application",
+      "root": "apps/healthy-platform-nestjs",
+      "entryFile": "main",
+      "sourceRoot": "apps/healthy-platform-nestjs/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/healthy-platform-nestjs/tsconfig.app.json"
+      }
+    },
+    "service-micro-example": {
+      "type": "application",
+      "root": "apps/service-micro-example",
+      "entryFile": "main",
+      "sourceRoot": "apps/service-micro-example/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/service-micro-example/tsconfig.app.json"
+      }
+    },
+    "service-micro-mailer": {
+      "type": "application",
+      "root": "apps/service-micro-mailer",
+      "entryFile": "main",
+      "sourceRoot": "apps/service-micro-mailer/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/service-micro-mailer/tsconfig.app.json"
+      }
+    },
+    "service-micro-trace": {
+      "type": "application",
+      "root": "apps/service-micro-trace",
+      "entryFile": "main",
+      "sourceRoot": "apps/service-micro-trace/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/service-micro-trace/tsconfig.app.json"
+      }
+    },
+    "service-micro-config": {
+      "type": "application",
+      "root": "apps/service-micro-config",
+      "entryFile": "main",
+      "sourceRoot": "apps/service-micro-config/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/service-micro-config/tsconfig.app.json"
+      }
+    }
   }
 }
