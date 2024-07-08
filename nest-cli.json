@@ -54,6 +54,15 @@
       "compilerOptions": {
         "tsConfigPath": "apps/service-micro-config/tsconfig.app.json"
       }
+    },
+    "bootstrap": {
+      "type": "library",
+      "root": "libs/bootstrap",
+      "entryFile": "index",
+      "sourceRoot": "libs/bootstrap/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/bootstrap/tsconfig.lib.json"
+      }
     }
   }
 }

@@ -17,6 +17,13 @@
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
-    "paths": {}
+    "paths": {
+      "@nestjs-package/bootstrap": [
+        "libs/bootstrap/src"
+      ],
+      "@nestjs-package/bootstrap/*": [
+        "libs/bootstrap/src/*"
+      ]
+    }
   }
 }
