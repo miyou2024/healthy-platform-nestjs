@@ -107,15 +107,24 @@ dependencies:
   csurf:
     specifier: ^1.11.0
     version: 1.11.0
+  dayjs:
+    specifier: ^1.11.11
+    version: 1.11.11
   express-session:
     specifier: ^1.18.0
     version: 1.18.0
   ioredis:
     specifier: ^5.4.1
     version: 5.4.1
+  js-yaml:
+    specifier: ^4.1.0
+    version: 4.1.0
   kafkajs:
     specifier: ^2.2.4
     version: 2.2.4
+  lodash:
+    specifier: ^4.17.21
+    version: 4.17.21
   mongoose:
     specifier: ^8.4.5
     version: 8.4.5
@@ -175,6 +184,12 @@ devDependencies:
   '@types/jest':
     specifier: ^29.5.2
     version: 29.5.12
+  '@types/js-yaml':
+    specifier: ^4.0.9
+    version: 4.0.9
+  '@types/lodash':
+    specifier: ^4.17.6
+    version: 4.17.6
   '@types/multer':
     specifier: ^1.4.11
     version: 1.4.11
@@ -3026,6 +3041,10 @@ packages:
     dependencies:
       expect: 29.7.0
       pretty-format: 29.7.0
+    dev: true
+
+  /@types/js-yaml@4.0.9:
+    resolution: {integrity: sha512-k4MGaQl5TGo/iipqb2UDG2UwjXziSWkh0uysQelTlJpX1qGlpUZYm8PnO4DxG1qBomtJUdYJ6qR6xdIah10JLg==}
     dev: true
 
   /@types/json-schema@7.0.15:

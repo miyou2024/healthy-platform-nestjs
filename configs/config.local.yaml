@@ -1,0 +1,41 @@
+Server:
+  Http:
+    ApiPrefix: '/global-api'
+    Port: 20008
+Swagger:
+  Path: '/docs'
+  Title: 'Swagger Title'
+  Desc: 'Swagger Description'
+Mailer:
+  Smtp:
+    Host: smtp_host
+    Port: 465
+    Auth:
+      Common:
+        User: common-user
+        Pass: common-password
+      AppOne:
+        User: app-one-user
+        Pass: app-one-pass
+Db:
+  MySQL:
+    AppOne:
+      InstanceName: instance-name
+      Host: 127.0.0.1
+      Port: 3306
+      UserName: root
+      PassWord: ''
+      DataBase: ''
+  MongoDB:
+    AppOne:
+      Host: 127.0.0.1
+      Port: 27017
+      UserName: root
+      PassWord: ''
+      DataBase: ''
+  Redis:
+    AppOne:
+      Host: 127.0.0.1
+      Port: 6379
+      DataBase: 1
+      PassWord: ''
