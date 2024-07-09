@@ -2,8 +2,8 @@ import { AuthGuard } from "@nestjs/passport";
 import {
   BadRequestException,
   ExecutionContext,
-  Injectable, Inject
-} from "@nestjs/common";
+  Injectable, Inject, UnauthorizedException,
+} from '@nestjs/common';
 import { Observable } from "rxjs";
 import { IStrategyToken } from "../nest-passport.interface";
 import { LocalTokenStrategy } from "./local-token.strategy";
@@ -39,7 +39,7 @@ export class LocalTokenGuard extends AuthGuard('local-token') {
         break;
     }
     if (!validateData[this.strategyOptions.fieldName]) {
-      throw new BadRequestException(`[${this.strategyOptions.fieldName}] 参数在 [${this.strategyOptions.fieldPosition}] 不存在`);
+      throw new UnauthorizedException(`[${this.strategyOptions.fieldName}] 参数在 [${this.strategyOptions.fieldPosition}] 不存在`);
     }
     return super.canActivate(context);
   }
