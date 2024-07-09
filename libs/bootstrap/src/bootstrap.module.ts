@@ -1,5 +1,6 @@
+import { RedisModule } from '@liaoliaots/nestjs-redis';
 import { DynamicModule, Module, Provider } from '@nestjs/common';
-import { ConfigModule } from '@nestjs/config';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { ScheduleModule } from '@nestjs/schedule';
 import { BootstrapService } from './bootstrap.service';
 import { IBootstrapModuleOptions } from './bootstrap.interface';
@@ -16,6 +17,9 @@ export class BootstrapModule{
     }
     if (options.scheduler?.enabled) {
       moduleImports.push(this.installSchedulerModule());
+    }
+    if (options.redis?.enabled) {
+      moduleImports.push(this.installRedisModuleAsync());
     }
     return {
       global     : true,
@@ -42,5 +46,24 @@ export class BootstrapModule{
 
   static installSchedulerModule() {
     return ScheduleModule.forRoot();
+  }
+
+  static installRedisModuleAsync() {
+    return RedisModule.forRootAsync({
+      inject: [ ConfigService ],
+      useFactory: (configService: ConfigService) => {
+        const redisOptions = configService.get('Db.Redis.Common');
+        console.log('RedisModule.forRootAsync:redisOptions....', redisOptions);
+        return {
+          readyLog: true,
+          config: {
+            host: redisOptions.Host,
+            port: redisOptions.Port,
+            db: redisOptions.DataBase,
+            password: redisOptions.PassWord,
+          },
+        };
+      },
+    });
   }
 }

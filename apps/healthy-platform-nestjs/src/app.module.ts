@@ -2,11 +2,15 @@ import { BootstrapModule } from '@nestjs-package/bootstrap';
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { NeedAuthModule } from './module/need-auth/need-auth.module';
 
 @Module({
   imports: [
     BootstrapModule.register({
       scheduler: {
+        enabled: true,
+      },
+      redis: {
         enabled: true,
       },
       configOptions: {
@@ -15,9 +19,13 @@ import { AppService } from './app.service';
           'configs/config.default.yaml'
         ]
       }
-    })
+    }),
+    NeedAuthModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [
+
+    AppService
+  ],
 })
 export class AppModule {}

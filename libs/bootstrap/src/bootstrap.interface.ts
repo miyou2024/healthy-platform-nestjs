@@ -7,6 +7,9 @@ export interface IBootstrapModuleOptions {
   scheduler?: {
     enabled: boolean;
   };
+  redis?: {
+    enabled: boolean;
+  };
 }
 
 
