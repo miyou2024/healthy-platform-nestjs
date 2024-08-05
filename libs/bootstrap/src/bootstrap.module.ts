@@ -38,6 +38,7 @@ export class BootstrapModule{
   }
 
   static installGlobalConfigModule(yamlFile: string | string[]) {
+    console.log(`EnvInfo：NODE_ENV=${process.env['NODE_ENV']}，CLOUD_ENV=${process.env['CLOUD_ENV']}`);
     return ConfigModule.forRoot({
       isGlobal: true,
       load    : [initGlobalConfig(yamlFile)],

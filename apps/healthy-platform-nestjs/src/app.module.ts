@@ -15,8 +15,8 @@ import { NeedAuthModule } from './module/need-auth/need-auth.module';
       },
       configOptions: {
         yamlFile: [
-          'configs/config.local.yaml',
-          'configs/config.default.yaml'
+          `configs/config.default.yaml`,
+          `configs/config.${process.env['CLOUD_ENV']}.yaml`,
         ]
       }
     }),
@@ -24,7 +24,6 @@ import { NeedAuthModule } from './module/need-auth/need-auth.module';
   ],
   controllers: [AppController],
   providers: [
-
     AppService
   ],
 })
